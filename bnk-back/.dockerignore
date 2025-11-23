@@ -1,0 +1,13 @@
+.git
+.env
+.osp
+.idea
+node_modules
+public/build
+public/hot
+storage/*.key
+vendor
+docker-compose.yml
+Dockerfile
+README.md
+tests

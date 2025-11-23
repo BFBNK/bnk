@@ -1,0 +1,15 @@
+# Frontend (Nuxt)
+  web:
+    build:
+      context: ./frontend # Путь к папке с Nuxt
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000" # Если нужно тестировать напрямую, минуя Nginx
+    environment:
+      # Переменные, которые Nuxt должен видеть в рантайме
+      - NUXT_PUBLIC_API_BASE=https://api.yourdomain.com
+      # Если используете Nuxt Image с внешними доменами
+      - NUXT_IMAGE_DOMAINS=your-s3-bucket.com
+    depends_on:
+      - api # Зависит от бэкенда (Laravel)
